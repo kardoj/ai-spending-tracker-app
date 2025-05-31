@@ -1,5 +1,7 @@
 package com.example.spendingtracker
 
+import android.text.InputFilter
+import android.text.Spanned
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
@@ -22,6 +24,22 @@ class TrackExpenseActivity : AppCompatActivity() {
         val btnPickDateTime = findViewById<Button>(R.id.btnPickDateTime)
         val tvDateTime = findViewById<TextView>(R.id.tvDateTime)
         val btnTrackExpense = findViewById<Button>(R.id.btnTrackExpense)
+
+        // InputFilter to allow max two decimal places
+        val filter = object : InputFilter {
+            override fun filter(
+                source: CharSequence?,
+                start: Int,
+                end: Int,
+                dest: Spanned?,
+                dstart: Int,
+                dend: Int
+            ): CharSequence? {
+                val result = StringBuilder(dest).replace(dstart, dend, source?.subSequence(start, end).toString())
+                return if (Regex("^\\d*(\\.\\d{0,2})?\$").matches(result)) null else ""
+            }
+        }
+        etAmount.filters = arrayOf(filter)
 
         // Set current date/time
         updateDateTimeText(tvDateTime, selectedTimestamp)
