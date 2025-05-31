@@ -1,4 +1,4 @@
-package com.example.helloworldapp
+package com.example.spendingtracker
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

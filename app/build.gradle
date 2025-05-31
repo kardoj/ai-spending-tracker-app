@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.helloworldapp'
+    namespace 'com.example.spendingtracker'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.helloworldapp"
+        applicationId "com.example.spendingtracker"
         minSdk 21
         targetSdk 34
         versionCode 1

@@ -21,7 +21,7 @@ HelloWorldApp
 │   │   │   ├── java
 │   │   │   │   └── com
 │   │   │   │       └── example
-│   │   │   │           └── helloworldapp
+│   │   │   │           └── spendingtracker
 │   │   │   │               └── MainActivity.kt
 │   │   │   ├── res
 │   │   │   │   └── layout
